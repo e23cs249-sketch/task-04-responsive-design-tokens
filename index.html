@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Responsive enterprise dashboard using modern CSS design tokens."
+  >
+
+  <title>Responsive Enterprise Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-content">
+
+      <a href="#" class="brand">
+        Enterprise Dashboard
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="main-navigation">
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#users">Users</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main page layout -->
+  <div class="page-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <nav aria-label="Sidebar navigation">
+
+        <h2>Dashboard</h2>
+
+        <ul class="sidebar-navigation">
+          <li><a href="#dashboard">Overview</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#users">Users</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- Main content -->
+    <main id="dashboard">
+
+      <!-- Page heading -->
+      <section class="page-heading">
+
+        <p class="eyebrow">Enterprise Management</p>
+
+        <h1>Dashboard</h1>
+
+        <p>
+          Monitor your organization's activity and performance.
+        </p>
+
+      </section>
+
+
+      <!-- Dashboard overview -->
+      <section
+        class="dashboard-section"
+        id="analytics"
+        aria-labelledby="overview-heading"
+      >
+
+        <div class="section-heading">
+
+          <div>
+            <p class="eyebrow">Overview</p>
+
+            <h2 id="overview-heading">
+              System Overview
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+          <article class="dashboard-card">
+
+            <p class="card-label">
+              Total Users
+            </p>
+
+            <h3 class="card-value">
+              1,248
+            </h3>
+
+            <p class="card-description">
+              Registered users
+            </p>
+
+          </article>
+
+
+          <article class="dashboard-card">
+
+            <p class="card-label">
+              Active Sessions
+            </p>
+
+            <h3 class="card-value">
+              342
+            </h3>
+
+            <p class="card-description">
+              Currently active
+            </p>
+
+          </article>
+
+
+          <article class="dashboard-card">
+
+            <p class="card-label">
+              Reports
+            </p>
+
+            <h3 class="card-value">
+              86
+            </h3>
+
+            <p class="card-description">
+              Generated this month
+            </p>
+
+          </article>
+
+
+          <article class="dashboard-card">
+
+            <p class="card-label">
+              System Status
+            </p>
+
+            <h3 class="card-value">
+              98.9%
+            </h3>
+
+            <p class="card-description">
+              System availability
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- Recent activity -->
+      <section
+        class="dashboard-section"
+        id="users"
+        aria-labelledby="activity-heading"
+      >
+
+        <div class="section-heading">
+
+          <div>
+            <p class="eyebrow">Activity</p>
+
+            <h2 id="activity-heading">
+              Recent Activity
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="activity-grid">
+
+          <article class="activity-card">
+
+            <h3>
+              New user registered
+            </h3>
+
+            <p>
+              Arun Kumar joined the organization.
+            </p>
+
+            <time datetime="2026-09-28">
+              Today
+            </time>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              Report generated
+            </h3>
+
+            <p>
+              Monthly performance report was generated.
+            </p>
+
+            <time datetime="2026-09-27">
+              Yesterday
+            </time>
+
+          </article>
+
+
+          <article class="activity-card">
+
+            <h3>
+              System update
+            </h3>
+
+            <p>
+              Dashboard services were successfully updated.
+            </p>
+
+            <time datetime="2026-09-26">
+              2 days ago
+            </time>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- System status -->
+      <section
+        class="dashboard-section"
+        id="settings"
+        aria-labelledby="status-heading"
+      >
+
+        <div class="status-panel">
+
+          <div>
+
+            <p class="eyebrow">
+              System
+            </p>
+
+            <h2 id="status-heading">
+              All systems operational
+            </h2>
+
+            <p>
+              Your enterprise services are currently running normally.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="primary-button"
+            id="detailsButton"
+          >
+            View Details
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <p>
+        &copy; 2026 Responsive Enterprise Dashboard.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>

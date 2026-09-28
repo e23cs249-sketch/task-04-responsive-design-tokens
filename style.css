@@ -1,0 +1,609 @@
+/* =========================================================
+   TASK 4 - RESPONSIVE DESIGN TOKENS
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+
+:root {
+
+  /* Colors */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+
+  --color-background: #f4f7fb;
+  --color-surface: rgba(255, 255, 255, 0.78);
+
+  --color-header: #172033;
+  --color-sidebar: #1e293b;
+
+  --color-text: #1f2937;
+  --color-text-muted: #64748b;
+
+  --color-border: #dbe3ec;
+
+  /* Typography */
+  --font-family-base: Arial, Helvetica, sans-serif;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.14);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+
+/* =========================================================
+   2. DARK THEME VARIABLES
+   ========================================================= */
+
+[data-theme="dark"] {
+  --color-background: #0f172a;
+  --color-surface: rgba(30, 41, 59, 0.78);
+
+  --color-text: #e5e7eb;
+  --color-text-muted: #94a3b8;
+
+  --color-border: #334155;
+
+  --color-header: #020617;
+  --color-sidebar: #111827;
+}
+
+
+/* =========================================================
+   3. RESET / BASE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+
+/* =========================================================
+   4. COMMON ELEMENTS
+   ========================================================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   5. CONTAINER
+   ========================================================= */
+
+.container {
+  width: min(100% - 32px, 1440px);
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   6. HEADER
+   ========================================================= */
+
+.site-header {
+  background: var(--color-header);
+  color: #ffffff;
+}
+
+.header-content {
+  min-height: 72px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: var(--space-md);
+
+  padding-block: var(--space-md);
+}
+
+.brand {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+
+/* =========================================================
+   7. MAIN NAVIGATION
+   ========================================================= */
+
+.main-navigation {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: var(--space-sm);
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation a {
+  display: block;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  padding: var(--space-sm) var(--space-md);
+
+  border-radius: var(--radius-sm);
+
+  transition: background-color var(--transition-fast);
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   8. PAGE LAYOUT
+   ========================================================= */
+
+.page-layout {
+  width: min(100% - 32px, 1440px);
+  margin-inline: auto;
+}
+
+main {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   9. SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  margin-block: var(--space-lg);
+
+  background: var(--color-sidebar);
+  color: #ffffff;
+
+  padding: var(--space-lg);
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar h2 {
+  margin-top: 0;
+
+  font-size: var(--font-size-lg);
+}
+
+.sidebar-navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.sidebar-navigation a {
+  display: block;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  padding: var(--space-sm) var(--space-md);
+
+  border-radius: var(--radius-sm);
+
+  transition: background-color var(--transition-fast);
+}
+
+.sidebar-navigation a:hover,
+.sidebar-navigation a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   10. PAGE HEADING
+   ========================================================= */
+
+.page-heading {
+  padding-block: var(--space-xl);
+}
+
+.page-heading h1 {
+  margin: 0;
+
+  font-size: var(--font-size-2xl);
+}
+
+.page-heading > p:last-child {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   11. SECTION
+   ========================================================= */
+
+.dashboard-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-heading {
+  margin-bottom: var(--space-lg);
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-xs);
+
+  color: var(--color-primary);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   12. DASHBOARD GRID
+   ========================================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: var(--space-md);
+}
+
+
+/* =========================================================
+   13. DASHBOARD CARDS
+   ========================================================= */
+
+.dashboard-card {
+  padding: var(--space-lg);
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  /*
+    Glassmorphism
+  */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-label {
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.card-value {
+  margin: 0;
+
+  font-size: var(--font-size-2xl);
+  line-height: 1.2;
+}
+
+.card-description {
+  margin: var(--space-sm) 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+}
+
+
+/* =========================================================
+   14. ACTIVITY GRID
+   ========================================================= */
+
+.activity-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: var(--space-md);
+}
+
+.activity-card {
+  padding: var(--space-lg);
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.activity-card h3 {
+  margin-top: 0;
+}
+
+.activity-card p {
+  color: var(--color-text-muted);
+}
+
+.activity-card time {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   15. STATUS PANEL
+   ========================================================= */
+
+.status-panel {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-lg);
+
+  padding: var(--space-lg);
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.status-panel h2 {
+  margin-top: 0;
+}
+
+.status-panel p:last-child {
+  margin-bottom: 0;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   16. PRIMARY BUTTON
+   ========================================================= */
+
+.primary-button {
+  border: 0;
+
+  padding: var(--space-sm) var(--space-lg);
+
+  color: #ffffff;
+  background: var(--color-primary);
+
+  border-radius: var(--radius-sm);
+
+  font-weight: var(--font-weight-bold);
+
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.primary-button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.primary-button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   17. FOOTER
+   ========================================================= */
+
+.site-footer {
+  margin-top: var(--space-2xl);
+
+  padding-block: var(--space-lg);
+
+  color: var(--color-text-muted);
+
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   18. TABLET - 768px
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  .header-content {
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .page-layout {
+    display: grid;
+
+    grid-template-columns: 220px minmax(0, 1fr);
+
+    gap: var(--space-xl);
+
+    align-items: start;
+  }
+
+  .sidebar {
+    margin-block: var(--space-xl);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .activity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .status-panel {
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+
+}
+
+
+/* =========================================================
+   19. DESKTOP - 1024px
+   ========================================================= */
+
+@media (min-width: 1024px) {
+
+  .dashboard-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .activity-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   20. LARGE DESKTOP - 1440px
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+  .dashboard-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   21. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+}
